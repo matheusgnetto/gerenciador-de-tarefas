@@ -1,8 +1,9 @@
-import express, { json } from 'express';
-const app = express();
-import taskRoutes from './routes/taskRoutes';
+const express = require('express');
+const taskRoutes = require('./routes/taskRoutes');
 
-app.use(json());
+const app = express();
+
+app.use(express.json());
 app.use('/api', taskRoutes);
 
-export default app;
+module.exports = app;

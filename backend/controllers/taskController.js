@@ -1,22 +1,34 @@
-import { getAllTasks as _getAllTasks, getTaskById as _getTaskById, createTask as _createTask, updateTask as _updateTask, deleteTask as _deleteTask } from '../models/task';
+const Task = require('../models/task');
 
-export async function getAllTasks(req, res) {
-  const tasks = await _getAllTasks();
+const getAllTasks = async (req, res) => {
+  const tasks = await Task.getAllTasks();
   res.json(tasks);
-}
-export async function getTaskById(req, res) {
-  const task = await _getTaskById(req.params.id);
+};
+
+const getTaskById = async (req, res) => {
+  const task = await Task.getTaskById(req.params.id);
   res.json(task);
-}
-export async function createTask(req, res) {
-  const newTask = await _createTask(req.body);
+};
+
+const createTask = async (req, res) => {
+  const newTask = await Task.createTask(req.body);
   res.status(201).json(newTask);
-}
-export async function updateTask(req, res) {
-  const updatedTask = await _updateTask(req.params.id, req.body);
+};
+
+const updateTask = async (req, res) => {
+  const updatedTask = await Task.updateTask(req.params.id, req.body);
   res.json(updatedTask);
-}
-export async function deleteTask(req, res) {
-  await _deleteTask(req.params.id);
+};
+
+const deleteTask = async (req, res) => {
+  await Task.deleteTask(req.params.id);
   res.status(204).send();
-}
+};
+
+module.exports = {
+  getAllTasks,
+  getTaskById,
+  createTask,
+  updateTask,
+  deleteTask,
+};
