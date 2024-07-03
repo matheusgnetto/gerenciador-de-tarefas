@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { HttpClient } from '@angular/common/http';
 
 import { TaskViewComponent } from '../task-view/task-view.component';
 
@@ -10,7 +11,8 @@ import { TaskViewComponent } from '../task-view/task-view.component';
   ],
   imports: [
     CommonModule,
-    FormsModule
+    FormsModule,
+    HttpClient
   ],
   exports: [
     TaskViewComponent
