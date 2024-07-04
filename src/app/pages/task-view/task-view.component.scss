@@ -43,6 +43,7 @@ $light: #f0f0f0;  // Definindo a variável $light, ajuste conforme necessário.
     font-size: 24px;
     text-transform: uppercase;
     letter-spacing: 2px;
+    color: #00a2ff;
 }
 
 .list-menu {
@@ -89,6 +90,45 @@ $light: #f0f0f0;  // Definindo a variável $light, ajuste conforme necessário.
     }
 }
 
-.task-lists {
+.task-title {
     display: flex;
+    align-items: center;
+    padding: 15px 1px;
+    border-radius: 5px;
+    width: 100%;
+    margin-bottom: 5px;
+
+    &:hover {
+        background: $light;
+    }
+
 }
+
+.task-description {
+    display: flex;
+    align-items: center;
+    padding: 10px 1px;
+    border-radius: 5px;
+    width: 100%;
+    margin-bottom: 5px;
+
+    &:hover {
+        background: $light;
+    }
+
+}
+
+.task-date {
+    display: flex;
+    align-items: center;
+    padding: 10px 1px;
+    border-radius: 5px;
+    width: 100%;
+    margin-bottom: 5px;
+
+    &:hover {
+        background: $light;
+    }
+}
+
+

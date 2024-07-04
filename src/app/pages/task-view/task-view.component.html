@@ -1,34 +1,47 @@
 <div class="centered-content">
   <div class="task-manager-container">
     <div class="sidebar has-background-white">
-      <h1 class="title has-text-primary">Criar</h1>
+      <h1 class="title">Criar</h1>
       <div class="list-menu">
-        <div>
+        <div class="task-title">
           <input [(ngModel)]="newTask.titulo" placeholder="Título" />
         </div>
-        <div>
+        <div class="task-description">
           <input [(ngModel)]="newTask.descricao" placeholder="Descrição" />
         </div>
-        <div>
-          <input [(ngModel)]="newTask.status" placeholder="Status" />
+        <div class="task-date">
+          <input
+            type="date"
+            [(ngModel)]="newTask.data_vencimento"
+            placeholder="Data de Vencimento"
+          />
         </div>
+
         <div>
-          <input type="date" [(ngModel)]="newTask.data_vencimento" placeholder="Data de Vencimento" />
+        <button class="button " (click)="adicionarTarefa()">
+          + Nova Tarefa
+        </button>
         </div>
-        <button class="button is-primary" (click)="adicionarTarefa()">+ Nova Tarefa</button>
       </div>
     </div>
 
     <div class="task-list-container has-background-light">
-      <h1 class="title has-text-primary">Tarefas</h1>
-      <div *ngFor="let task of tasks" class="task" [class.complete]="task.status === 'completa'">
-        <p>{{ task.titulo }}</p>
+      <h1 class="title">Tarefas</h1>
+      <div
+        *ngFor="let task of tasks"
+        class="task"
+        [class.complete]="task.status === 'completa'"
+      >
+        <h1>{{ task.titulo }}</h1>
         <p>{{ task.descricao }}</p>
         <p>Status: {{ task.status }}</p>
-        <p>Data de Vencimento: {{ task.data_vencimento }}</p>
         <div class="task-buttons">
-          <button class="button is-info" (click)="editarTarefa(task)">Editar</button>
-          <button class="button is-danger" (click)="deletarTarefa(task.id)">Deletar</button>
+          <button class="button is-info" (click)="editarTarefa(task)">
+            Completa
+          </button>
+          <button class="button is-danger" (click)="deletarTarefa(task.id)">
+            Deletar
+          </button>
         </div>
       </div>
     </div>
