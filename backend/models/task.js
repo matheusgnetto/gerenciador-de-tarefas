@@ -6,7 +6,7 @@ const createTable = async () => {
       id SERIAL PRIMARY KEY,
       titulo VARCHAR(255) NOT NULL,
       descricao TEXT,
-      status VARCHAR(50) NOT NULL DEFAULT 'pendente',
+      status VARCHAR(50) NOT NULL DEFAULT 'Pendente',
       data_vencimento DATE
     )
   `;

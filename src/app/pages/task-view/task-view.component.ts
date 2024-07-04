@@ -13,7 +13,7 @@ import { TaskService } from '../services/task.service';
 })
 export class TaskViewComponent implements OnInit {
   tasks: any[] = [];
-  newTask: any = { titulo: '', descricao: '', status: 'pendente', data_vencimento: '' };
+  newTask: any = { titulo: '', descricao: '', status: 'Pendente', data_vencimento: '' };
 
   constructor(public taskService: TaskService) {}
 
@@ -41,7 +41,7 @@ export class TaskViewComponent implements OnInit {
   editarTarefa(task: any) {
     const updatedTask = {
       ...task,
-      status: task.status === 'pendente' ? 'completa' : 'pendente'
+      status: task.status === 'Pendente' ? 'Completa' : 'Pendente'
     };
     this.taskService.updateTask(task.id, updatedTask)
       .subscribe(() => {
@@ -57,6 +57,6 @@ export class TaskViewComponent implements OnInit {
   }
 
   clearForm() {
-    this.newTask = { titulo: '', descricao: '', status: 'pendente', data_vencimento: '' };
+    this.newTask = { titulo: '', descricao: '', status: 'Pendente', data_vencimento: '' };
   }
 }

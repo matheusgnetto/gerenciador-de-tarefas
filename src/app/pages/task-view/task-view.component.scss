@@ -1,134 +1,142 @@
 @import '../../main-styles.scss';
 
-$light: #f0f0f0;  // Definindo a variável $light, ajuste conforme necessário.
+$light: #f0f0f0;
 
 .centered-content {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
 }
 
 .task-manager-container {
-    display: flex;
-    width: 100%;
-    height: 100%;
-    max-width: 1000px;
-    max-height: 680px;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  max-width: 1000px;
+  max-height: 680px;
 }
 
 .sidebar {
-    display: flex;
-    flex-direction: column;
-    width: 250px;
-    background: #ffffff;
-    padding: 42px;
-    border-top-left-radius: 8px;
-    border-bottom-left-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  width: 250px;
+  background: #ffffff;
+  padding: 42px;
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
 }
 
 .task-list-container {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1;
-    padding: 42px;
-    border-top-right-radius: 8px;
-    border-bottom-right-radius: 8px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  padding: 42px;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+  overflow-y: auto;
 }
 
 .title {
-    font-family: 'Lato';
-    font-size: 24px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    color: #00a2ff;
+  font-family: 'Lato';
+  font-size: 24px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #00a2ff;
+}
+
+.input-field {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  font-size: 16px;
+  box-shadow: inset 0 0 5px rgba(0,0,0,0.1);
 }
 
 .list-menu {
-    flex-direction: column;
-    margin-top: 15px;
-    flex-grow: 1;
-
-    .list-menu-item {
-        display: flex;
-        align-items: center;
-        padding: 10px 15px;
-        border-radius: 5px;
-        width: 100%;
-        color: #5f5f5f;
-        margin-bottom: 5px;
-
-        &:hover {
-            background: $light;
-        }
-
-        &.is-active {
-            background-color: #0074ae;
-            color: #ffffff;
-        }
-    }
+  flex-direction: column;
+  margin-top: 15px;
+  flex-grow: 1;
 }
 
 .task {
-    background: white;
-    padding: 15px 20px;
-    border-radius: 5px;
-    margin-top: 10px;
+  background: white;
+  padding: 15px 20px;
+  border-radius: 8px;
+  margin-top: 10px;
+  position: relative;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 
-    &:active {
-        transform: scale(0.95);
-    }
+  &:active {
+    transform: scale(0.95);
+  }
 
-    &:hover {
-        box-shadow: 0 0 0 5px #eeeeee;
-    }
+  &:hover {
+    box-shadow: 0 0 0 5px #eeeeee;
+  }
 
-    &.complete {
-        text-decoration: line-through;
-    }
+  &.complete {
+    text-decoration: line-through;
+  }
 }
 
-.task-title {
-    display: flex;
-    align-items: center;
-    padding: 15px 1px;
-    border-radius: 5px;
-    width: 100%;
-    margin-bottom: 5px;
-
-    &:hover {
-        background: $light;
-    }
-
+.task-title-view {
+  font-weight: bold;
+  font-size: 20px;
 }
 
-.task-description {
-    display: flex;
-    align-items: center;
-    padding: 10px 1px;
-    border-radius: 5px;
-    width: 100%;
-    margin-bottom: 5px;
-
-    &:hover {
-        background: $light;
-    }
-
+.task-description-view {
+  word-wrap: break-word;
+  white-space: pre-wrap;
 }
 
-.task-date {
-    display: flex;
-    align-items: center;
-    padding: 10px 1px;
-    border-radius: 5px;
-    width: 100%;
-    margin-bottom: 5px;
-
-    &:hover {
-        background: $light;
-    }
+.task-due-date {
+  margin-top: 5px;
 }
 
+.task-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  padding-right: 20px;
 
+  i {
+    cursor: pointer;
+    font-size: 18px;
+    padding: 10px;
+
+    &:hover {
+      color: #0074ae;
+    }
+  }
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: auto;
+  padding: 20px 0;
+}
+
+.button {
+  background-color: #00a2ff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.8;
+  }
+}

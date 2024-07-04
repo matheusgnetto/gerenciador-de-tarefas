@@ -4,24 +4,24 @@
       <h1 class="title">Criar</h1>
       <div class="list-menu">
         <div class="task-title">
-          <input [(ngModel)]="newTask.titulo" placeholder="Título" />
+          <input [(ngModel)]="newTask.titulo" placeholder="Título" class="input-field" />
         </div>
         <div class="task-description">
-          <input [(ngModel)]="newTask.descricao" placeholder="Descrição" />
+          <input [(ngModel)]="newTask.descricao" placeholder="Descrição" class="input-field" />
         </div>
         <div class="task-date">
           <input
             type="date"
             [(ngModel)]="newTask.data_vencimento"
             placeholder="Data de Vencimento"
+            class="input-field"
           />
         </div>
-
-        <div>
-        <button class="button " (click)="adicionarTarefa()">
+      </div>
+      <div class="button-container">
+        <button class="button is-primary" (click)="adicionarTarefa()">
           + Nova Tarefa
         </button>
-        </div>
       </div>
     </div>
 
@@ -30,18 +30,15 @@
       <div
         *ngFor="let task of tasks"
         class="task"
-        [class.complete]="task.status === 'completa'"
+        [class.complete]="task.status === 'Completa'"
       >
-        <h1>{{ task.titulo }}</h1>
-        <p>{{ task.descricao }}</p>
+        <h1 class="task-title-view">{{ task.titulo }}</h1>
+        <p class="task-description-view">{{ task.descricao }}</p>
+        <p class="task-due-date">Data de Vencimento: {{ task.data_vencimento | date: 'dd/MM/yyyy' }}</p>
         <p>Status: {{ task.status }}</p>
         <div class="task-buttons">
-          <button class="button is-info" (click)="editarTarefa(task)">
-            Completa
-          </button>
-          <button class="button is-danger" (click)="deletarTarefa(task.id)">
-            Deletar
-          </button>
+          <i class="fas fa-check" (click)="editarTarefa(task)"></i>
+          <i class="fas fa-trash" (click)="deletarTarefa(task.id)"></i>
         </div>
       </div>
     </div>
